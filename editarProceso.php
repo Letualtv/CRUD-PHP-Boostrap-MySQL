@@ -1,7 +1,7 @@
 <?php
-print_r($_POST);
-if (!isset ($_POST['codigo'])) {
+if (!isset($_POST['codigo'])) {
     header('Location: index.php?mensaje=error');
+    exit();
 }
 
 include 'model/conexion.php';

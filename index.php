@@ -111,16 +111,13 @@ $persona = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
                                 ?>
 
-                                    <tr class="">
-                                        <td scope="row"><?php echo $dato->codigo; ?></td>
-                                        <td>
-                                        <td scope="row"><?php echo $dato->nombre; ?></td>
-                                        <td>
-                                        <td scope="row"><?php echo $dato->edad; ?></td>
-                                        <td>
-                                        <td scope="row"><?php echo $dato->signo; ?></td>
-                                        <td><a class="text-primary" href="editar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
-                                        <td><a onclick="return confirm('¿Seguro que quieres eliminarlo?')" class="text-danger" href="eliminar.php?codigo=<?php echo $dato->codigo; ?>"><i class="bi bi-trash"></i></a></td>
+                                    <tr>
+                                        <td><?php echo $dato->codigo; ?></td>
+                                        <td><?php echo htmlspecialchars($dato->nombre); ?></td>
+                                        <td><?php echo (int)$dato->edad; ?></td>
+                                        <td><?php echo htmlspecialchars($dato->signo); ?></td>
+                                        <td><a class="text-primary" href="editar.php?codigo=<?php echo (int)$dato->codigo; ?>"><i class="bi bi-pencil-square"></i></a></td>
+                                        <td><a onclick="return confirm('¿Seguro que quieres eliminarlo?')" class="text-danger" href="eliminar.php?codigo=<?php echo (int)$dato->codigo; ?>"><i class="bi bi-trash"></i></a></td>
                                     </tr>
 
                                 <?php

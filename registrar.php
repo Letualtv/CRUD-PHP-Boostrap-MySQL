@@ -1,7 +1,6 @@
 <?php
 //print_r($_POST);
     if(empty($_POST["oculto"]) || empty($_POST["txtNombre"]) || empty($_POST["txtEdad"]) || empty($_POST["txtSigno"])){
-        echo "Faltan datos";
         header('Location: index.php?mensaje=falta');
         exit();
     }

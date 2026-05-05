@@ -45,15 +45,15 @@ $persona = $sentencia->fetch(PDO::FETCH_OBJ);
 
                     <div class="mb-3">
                         <label class="form-label">Nombre:</label>
-                        <input value="<?php echo $persona->nombre; ?>" type="text" class="form-control" name="txtNombre" required>
+                        <input value="<?php echo htmlspecialchars($persona->nombre); ?>" type="text" class="form-control" name="txtNombre" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Edad:</label>
-                        <input value="<?php echo $persona->edad; ?>" type="number" class="form-control" name="txtEdad" required>
+                        <input value="<?php echo (int)$persona->edad; ?>" type="number" class="form-control" name="txtEdad" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Signo:</label>
-                        <input value="<?php echo $persona->signo; ?>" type="text" class="form-control" name="txtSigno" required>
+                        <input value="<?php echo htmlspecialchars($persona->signo); ?>" type="text" class="form-control" name="txtSigno" required>
                     </div>
                     <div class="d-grid">
                         <input type="hidden" name="codigo" value="<?php echo $persona->codigo; ?>">
